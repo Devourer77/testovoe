@@ -18,9 +18,7 @@ $container-max-widths: (
     margin: auto;
   }
 }
-body {
-  max-width: 960px;
-  margin: auto;
+.main {
   overflow-x: hidden;
   font-family: HelveticaNeue-Light;
 }
@@ -28,8 +26,22 @@ body {
   background-color: #f5f3e8;
   border: none;
   box-shadow: none;
+
 }
-.btn-group {
+.btn-img-bonf {
+  background: url(/images/bonfesto.png) no-repeat #f5f3e8 50% 50%;
+}
+.btn-img-cook {
+  background: url(/images/cooking.png) no-repeat #f5f3e8 50% 50%;
+}
+.btn-img-vill {
+  background: url(/images/villmonte.png) no-repeat #f5f3e8 50% 50%;
+}
+.btn-img-bonf_mini {
+  background: url(/images/bonfesto_mini.png) no-repeat 0% 50%;
+}
+
+.head-group {
   span {
     color: #969189;
     text-decoration: none;
@@ -45,11 +57,8 @@ body {
   }
 }
 .product-chess {
-  div {
-    max-width: 300px;
-  }
 }
-.row {
+.list-product {
   color: #3c2f20;
   font-size: 1rem;
    button {

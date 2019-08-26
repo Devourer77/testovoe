@@ -5,18 +5,19 @@ html(lang="en")
         meta(name='viewport' content='width=device-width', 'initial-scale=1', 'shrink-to-fit=no')
         title= test
     body
+        div(class='main container')
             div(class='text-center py-3')
                 h1.title-size Представлен в брендах
-            div(class='btn-group col-12 mb-3 justify-content-md-center sm-head-button' role='group')
-                a(href='#' class='btn button-head p-3 mx-md-1 col-md-2 col-sm-3')
-                    span(class='text-center') Все бренды
-                mixin btn(imageName)
-                    button(type="button" class='button-head mx-md-1 col-md-2 col-sm-3').btn
-                        img(src=imageName alt="")
-                +btn('images/bonfesto.png')
-                +btn('images/cooking.png')
-                +btn('images/villmonte.png')
-            div(class='row p-0 mt-1')
+            div(class='btn-group col-12 mb-3 justify-content-md-center sm-head-button head-group' role='group')
+                - var btnStyle = ['button-head mx-md-1 col-md-2 col-sm-3 btn text-center py-3']
+                mixin btn(classImg, title)
+                    button(type="button" class=classImg class=btnStyle)
+                        <span> #{title} </span>
+                +btn('', 'Все бренды')
+                +btn('btn-img-bonf')
+                +btn('btn-img-cook')
+                +btn('btn-img-vill')
+            div(class='row p-0 mt-1 list-product')
                 -
                     var chessList = [
                         {image: "images/cream_green.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "тар-тар", title: "Прекрастно заменяет классический французкий соус желтка, растительного масла и зелёного лука."},
@@ -25,18 +26,17 @@ html(lang="en")
                         {image: "images/cream_red.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "неаполитанский", title: "Идеален для курицы, отлично сочетается с говядиной в блюдах среднеземнаморской кухни."},
                         {image: "images/cream_green.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "тар-тар", title: "Прекрастно заменяет классический французкий соус желтка, растительного масла и зелёного лука."}
                         ];
-                - var product = ['col-10 col-md-5 ml-md-4 ml-lg-0 col-lg-4 mb-4'];
+                - var product = ['col-12 col-md-6 col-lg-4 mb-4'];
                 mixin product-chess(chess)
                     -var img = chess.image
-                    div(class=product).product-chess
-                        img(src=img alt='')
+                    div(class=product)
+                        img(class='w-100' src=img alt='')
                         h6(class='mb-0 pt-1 col-10 p-0 mt-2') #{chess.subtitle}
-                        a(href='#' class='display-6 col-10 p-0')
-                            span(class='text-uppercase d-flex descr-size col-4 p-0') #{chess.chessName}
+                        a(href='#')
+                            span(class='text-uppercase display-6 d-flex descr-size col-4 p-0') #{chess.chessName}
                             span #{chess.chessNameSubtitle}
-                        button(type='button' class='btn col-12 p-0 text-left my-2')
-                            img(src='images/bonfesto_mini.png' alt='')
-                        div(class='product-chesss p-0') #{chess.title}
+                        button(type='button' class='btn btn-img-bonf_mini col-12 py-3 my-2')
+                        div(class='product-chesss mx-auto p-0') #{chess.title}
                 for chess in chessList
                     +product-chess(chess)
     link(href='https://fonts.googleapis.com/css?family=Exo+2:400,500&display=swap&subset=cyrillic' rel='stylesheet')
