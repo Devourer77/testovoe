@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width', 'initial-scale=1', 'shrink-to-fit=no')
+        title= test
+    body
+            div(class='text-center py-3')
+                h1.title-size Представлен в брендах
+            div(class='btn-group col-12 mb-3 justify-content-md-center sm-head-button' role='group')
+                a(href='#' class='btn button-head p-3 mx-md-1 col-md-2 col-sm-3')
+                    span(class='text-center') Все бренды
+                mixin btn(imageName)
+                    button(type="button" class='button-head mx-md-1 col-md-2 col-sm-3').btn
+                        img(src=imageName alt="")
+                +btn('images/bonfesto.png')
+                +btn('images/cooking.png')
+                +btn('images/villmonte.png')
+            div(class='row p-0 mt-1')
+                -
+                    var chessList = [
+                        {image: "images/cream_green.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "тар-тар", title: "Прекрастно заменяет классический французкий соус желтка, растительного масла и зелёного лука."},
+                        {image: "images/cream_orange.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "тар-тар", title: "Прекрастно заменяет классический французкий соус желтка, растительного масла и зелёного лука."},
+                        {image: "images/cream_red.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "неаполитанский", title: "Идеален для курицы, отлично сочетается с говядиной в блюдах среднеземнаморской кухни."},
+                        {image: "images/cream_red.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "неаполитанский", title: "Идеален для курицы, отлично сочетается с говядиной в блюдах среднеземнаморской кухни."},
+                        {image: "images/cream_green.png", subtitle: "Сыр мягкий", chessName: "Кремчиз", chessNameSubtitle: "тар-тар", title: "Прекрастно заменяет классический французкий соус желтка, растительного масла и зелёного лука."}
+                        ];
+                - var product = ['col-10 col-md-5 ml-md-4 ml-lg-0 col-lg-4 mb-4'];
+                mixin product-chess(chess)
+                    -var img = chess.image
+                    div(class=product).product-chess
+                        img(src=img alt='')
+                        h6(class='mb-0 pt-1 col-10 p-0 mt-2') #{chess.subtitle}
+                        a(href='#' class='display-6 col-10 p-0')
+                            span(class='text-uppercase d-flex descr-size col-4 p-0') #{chess.chessName}
+                            span #{chess.chessNameSubtitle}
+                        button(type='button' class='btn col-12 p-0 text-left my-2')
+                            img(src='images/bonfesto_mini.png' alt='')
+                        div(class='product-chesss p-0') #{chess.title}
+                for chess in chessList
+                    +product-chess(chess)
+    link(href='https://fonts.googleapis.com/css?family=Exo+2:400,500&display=swap&subset=cyrillic' rel='stylesheet')
