@@ -69,13 +69,6 @@ $container-max-widths: (
   button:focus {
     box-shadow: none;
   }
-  a:hover {
-    color: #5b84f0;
-    text-decoration: none;
-  }
-  a span:hover {
-    border-color: #5b84f0;
-  }
   a {
     font-family: 'Exo 2';
     color: #3c2f20;
@@ -83,6 +76,15 @@ $container-max-widths: (
   }
   a span {
     border-bottom: 1px dashed #3c2f20;
+  }
+  a:hover span {
+    color: #5b84f0;
+    text-decoration: none;
+    border-color: #5b84f0;
+
+    span:hover {
+      border-color: #5b84f0;
+    }
   }
 }
 .title-size {
