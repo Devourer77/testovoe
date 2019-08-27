@@ -9,13 +9,14 @@ html(lang="en")
             div(class='text-center py-3')
                 h1.title-size Представлен в брендах
             div(class='btn-group row no-gutters w-100 mb-3 justify-content-md-center sm-head-button head-group' role='group')
-                - var btnStyle = ['button-head col-12 mx-md-1 col-md-2 col-sm-3 btn text-center py-4 py-md-3']
+                - var btnStyle = ['button-head col-12 my-1 mx-md-1 col-md-2 col-sm-3 btn text-center py-4 py-md-3']
                 mixin btn(classImg, title)
-                    button(type="button" class=classImg class=btnStyle) <span> #{title} </span>
+                    button(type="button" class=classImg class=btnStyle)
+                        <span> #{title} </span>
                 +btn('', 'Все бренды')
-                +btn('btn-img-bonf')
-                +btn('btn-img-cook')
-                +btn('btn-img-vill')
+                +btn('btn-img-bonf', '')
+                +btn('btn-img-cook', '')
+                +btn('btn-img-vill', '')
             div(class='row p-0 mt-1 list-product')
                 -
                     var chessList = [
@@ -31,10 +32,10 @@ html(lang="en")
                     div(class=product)
                         img(class='w-100' src=img alt='')
                         h6(class='mb-0 pt-1 col-10 p-0 mt-2') #{chess.subtitle}
-                        a(href='#')
+                        a(href='#' class='product-link d-block')
                             span(class='text-uppercase display-6 d-flex descr-size col-4 p-0') #{chess.chessName}
                             span #{chess.chessNameSubtitle}
-                        button(type='button' class='btn btn-img-bonf_mini col-12 py-3 my-2')
+                        button(type='button' class='btn btn-img-bonf_mini col-12 py-3 my-2 product-btn')
                         div(class='product-chesss mx-auto p-0') #{chess.title}
                 for chess in chessList
                     +product-chess(chess)

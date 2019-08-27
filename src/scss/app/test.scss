@@ -3,19 +3,18 @@
   font-family: HelveticaNeue-Light;
 }
 .button-head {
-  background-color: #f5f3e8;
+  background-color: $grayLight;
   border: none;
   box-shadow: none;
-
 }
 .btn-img-bonf {
-  background: url(/images/bonfesto.png) no-repeat #f5f3e8 50% 50%;
+  background: url(/images/bonfesto.png) no-repeat $grayLight 50% 50%;
 }
 .btn-img-cook {
-  background: url(/images/cooking.png) no-repeat #f5f3e8 50% 50%;
+  background: url(/images/cooking.png) no-repeat $grayLight 50% 50%;
 }
 .btn-img-vill {
-  background: url(/images/villmonte.png) no-repeat #f5f3e8 50% 50%;
+  background: url(/images/villmonte.png) no-repeat $grayLight 50% 50%;
 }
 .btn-img-bonf_mini {
   background: url(/images/bonfesto_mini.png) no-repeat 0 50%;
@@ -23,47 +22,45 @@
 
 .head-group {
   span {
-    color: #969189;
+    color: $gray;
     text-decoration: none;
-    border-bottom: 1px dashed #969189;
+    border-bottom: 1px dashed $gray;
   }
   a:focus {
-    background-color: #8fb52c;
+    background-color: $green;
     box-shadow: none;
   }
   button:focus {
-    background-color: #8fb52c;
+    background-color: $green;
     box-shadow: none;
   }
 }
-.product-chess {
-}
 .list-product {
-  color: #3c2f20;
+  color: $brown;
   font-size: 1rem;
-   button {
+  .product-btn {
     padding: 0;
     box-shadow: none;
     border: none;
   }
-  button:focus {
+  .product-btn:focus {
     box-shadow: none;
   }
-  a {
+  .product-link {
     font-family: 'Exo 2';
-    color: #3c2f20;
+    color: $brown;
     text-decoration: none;
   }
-  a span {
-    border-bottom: 1px dashed #3c2f20;
+  .product-link span {
+    border-bottom: 1px dashed $brown;
   }
-  a:hover span {
-    color: #5b84f0;
+  .product-link:hover span {
+    color: $blue;
     text-decoration: none;
-    border-color: #5b84f0;
+    border-color: $blue;
 
     span:hover {
-      border-color: #5b84f0;
+      border-color: $blue;
     }
   }
 }
