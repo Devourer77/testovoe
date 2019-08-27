@@ -21,18 +21,14 @@
 }
 
 .head-group {
-  span {
-    color: $gray;
-    text-decoration: none;
-    border-bottom: 1px dashed $gray;
-  }
-  a:focus {
+  .button-line:focus {
     background-color: $green;
     box-shadow: none;
-  }
-  button:focus {
-    background-color: $green;
-    box-shadow: none;
+    span {
+      color: $gray;
+      text-decoration: none;
+      border-bottom: 1px dashed $gray;
+    }
   }
 }
 .list-product {
