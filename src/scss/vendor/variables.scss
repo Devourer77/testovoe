@@ -1,1 +1,12 @@
-// Create your SCSS variables here and it will override bootstrap styles
+$grid-breakpoints: (
+        sm: 767px,
+        md: 991px,
+        lg: 1199px,
+        xl: 1200px,
+);
+$container-max-widths: (
+        sm: 767px,
+        md: 991px,
+        lg: 1199px,
+        xl: 1200px,
+);

@@ -9,10 +9,9 @@ html(lang="en")
             div(class='text-center py-3')
                 h1.title-size Представлен в брендах
             div(class='btn-group row no-gutters w-100 mb-3 justify-content-md-center sm-head-button head-group' role='group')
-                - var btnStyle = ['button-head mx-md-1 col-md-2 col-sm-3 btn text-center py-3']
+                - var btnStyle = ['button-head col-12 mx-md-1 col-md-2 col-sm-3 btn text-center py-4 py-md-3']
                 mixin btn(classImg, title)
-                    button(type="button" class=classImg class=btnStyle)
-                        <span> #{title} </span>
+                    button(type="button" class=classImg class=btnStyle) <span> #{title} </span>
                 +btn('', 'Все бренды')
                 +btn('btn-img-bonf')
                 +btn('btn-img-cook')
@@ -39,4 +38,3 @@ html(lang="en")
                         div(class='product-chesss mx-auto p-0') #{chess.title}
                 for chess in chessList
                     +product-chess(chess)
-    link(href='https://fonts.googleapis.com/css?family=Exo+2:400,500&display=swap&subset=cyrillic' rel='stylesheet')
