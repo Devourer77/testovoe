@@ -21,41 +21,34 @@
 }
 
 .head-group {
+  span {
+    color: $gray;
+    text-decoration: none;
+    border-bottom: 1px dashed $gray;
+  }
   .button-line:focus {
     background-color: $green;
     box-shadow: none;
-    span {
-      color: $gray;
-      text-decoration: none;
-      border-bottom: 1px dashed $gray;
-    }
   }
 }
 .list-product {
   color: $brown;
-  font-size: 1rem;
-  .product-btn {
-    padding: 0;
-    box-shadow: none;
-    border: none;
-  }
-  .product-btn:focus {
-    box-shadow: none;
+  .chess-size {
+    font-size: 1rem;
   }
   .product-link {
     font-family: 'Exo 2';
     color: $brown;
     text-decoration: none;
+    .product-link-border {
+      border-bottom: 1px dashed $brown;
+    }
   }
-  .product-link span {
-    border-bottom: 1px dashed $brown;
-  }
-  .product-link:hover span {
+  .product-link:hover {
     color: $blue;
     text-decoration: none;
     border-color: $blue;
-
-    span:hover {
+    .product-link-border {
       border-color: $blue;
     }
   }

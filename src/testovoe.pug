@@ -31,11 +31,12 @@ html(lang="en")
                     -var img = chess.image
                     div(class=product)
                         img(class='w-100' src=img alt='')
-                        h6(class='mb-0 pt-1 col-10 p-0 mt-2') #{chess.subtitle}
+                        h6(class='mt-2 mb-0 chess-size') #{chess.subtitle}
                         a(href='#' class='product-link d-block')
-                            span(class='text-uppercase display-6 d-flex descr-size col-4 p-0') #{chess.chessName}
-                            span #{chess.chessNameSubtitle}
-                        button(type='button' class='btn btn-img-bonf_mini col-12 py-3 my-2 product-btn')
+                            span(class='d-block')
+                                span(class='text-uppercase display-6 descr-size product-link-border') #{chess.chessName}
+                            span.product-link-border #{chess.chessNameSubtitle}
+                        div(class='btn-img-bonf_mini d-block py-3 my-2 product-btn')
                         div(class='product-chesss mx-auto p-0') #{chess.title}
                 for chess in chessList
                     +product-chess(chess)
